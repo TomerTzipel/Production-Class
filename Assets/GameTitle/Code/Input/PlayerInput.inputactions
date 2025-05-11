@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
+                    "name": "Fire",
                     "type": "Button",
                     "id": "1502c4dc-a6fb-4d3f-b1e2-9bd679ea45ec",
                     "expectedControlType": "",
@@ -85,7 +85,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
