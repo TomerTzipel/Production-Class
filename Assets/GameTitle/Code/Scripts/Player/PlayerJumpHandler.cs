@@ -14,7 +14,7 @@ public class PlayerJumpHandler : PlayerScript
 
     private void OnJumpInput(InputAction.CallbackContext context)
     {
-        //Check if a jump is legal
+        if(IsAirborne) return;
         Jump();
     }
 

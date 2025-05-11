@@ -7,9 +7,12 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField] public Rigidbody2D RigidBody { get; private set; }
     [SerializeField] private PlayerMovementHandler movementHandler;
     [SerializeField] private PlayerJumpHandler jumpHandler;
-    [SerializeField] private PlayerRecoilHandler dashHandler;
+    [SerializeField] private PlayerRecoilHandler recoilHandler;
+    [SerializeField] private PlayerGroundHandler groundHandler;
 
     public PlayerInput Input { get; private set; }
+
+    public bool IsAirborne {  get { return groundHandler.IsPlayerAirborne; } }
 
     private void Awake()
     {

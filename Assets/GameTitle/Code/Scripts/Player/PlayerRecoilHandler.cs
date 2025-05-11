@@ -19,7 +19,6 @@ public class PlayerRecoilHandler : PlayerScript
     {
         Vector2 direction = transform.position - shotgunTransform.position;
         direction.Normalize();
-        Debug.Log("D:" + direction);
         RigidBody.AddForce(Settings.DashForce * direction,ForceMode2D.Impulse);
     }
 }
