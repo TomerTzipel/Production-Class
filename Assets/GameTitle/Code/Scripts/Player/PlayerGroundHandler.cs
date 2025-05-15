@@ -12,14 +12,12 @@ public class PlayerGroundHandler : PlayerScript
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Ground")) return;
-        Debug.Log("Grounded");
         IsPlayerAirborne = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Ground")) return;
-        Debug.Log("Airborne");
         IsPlayerAirborne = true;
     }
 }
