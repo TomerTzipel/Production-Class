@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class ShotgunHandler : PlayerScript
     [SerializeField] private Transform shotgunPivotTransform;
     [SerializeField] private Transform shotgunTransform;
     [SerializeField] private SpriteRenderer shotgunVisual;
+
+    [SerializeField] public MMF_Player shotFeedback;
     private void OnEnable()
     {
         Input.Movement.Fire.performed += Fire;
@@ -62,6 +65,8 @@ public class ShotgunHandler : PlayerScript
 
     private void Fire(InputAction.CallbackContext context)
     {
+        shotFeedback.PlayFeedbacks();
 
+        //Fire the actual projectile to hit the enemies
     }
 }
