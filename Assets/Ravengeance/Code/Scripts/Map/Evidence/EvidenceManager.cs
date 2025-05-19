@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class EvidenceManager : MonoBehaviour
@@ -8,7 +7,7 @@ public class EvidenceManager : MonoBehaviour
     [SerializeField] private List<EvidenceHandler> evidenceHandlers;
     [SerializeField] private List<Evidence> collectedEvidence;
 
-    [SerializeField] private EvidenceCounterHandler counterHandler;
+    [SerializeField] private PlayerController playerController;
     private int collectedEvidenceCounter;
 
     void Awake()
@@ -39,14 +38,14 @@ public class EvidenceManager : MonoBehaviour
             if (status) collectedEvidenceCounter++;
         }
 
-        counterHandler.UpdateCounter(collectedEvidenceCounter, evidenceHandlers.Count);
+        playerController.UiHandler.UpdateCounter(collectedEvidenceCounter, evidenceHandlers.Count);
     }
     
     public void CollectEvidence(Evidence evidence)
     {
         collectedEvidence.Add(evidence);
         collectedEvidenceCounter++;
-        counterHandler.UpdateCounter(collectedEvidenceCounter, evidenceHandlers.Count);
+        playerController.UiHandler.UpdateCounter(collectedEvidenceCounter, evidenceHandlers.Count);
     }
 
     public void SaveCollectedEvidence()

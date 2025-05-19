@@ -35,7 +35,7 @@ public class PlayerMovementHandler : PlayerScript
 
     private void Move()
     {
-        if (RigidBody.linearVelocityX > Settings.MaxSpeed) return;
+        if (Mathf.Abs(RigidBody.linearVelocityX) > Settings.MaxSpeed) return;
 
         RigidBody.AddForceX(Settings.Acceleration * _direction);
         RigidBody.linearVelocityX = Mathf.Clamp(RigidBody.linearVelocityX,-Settings.MaxSpeed, Settings.MaxSpeed);
